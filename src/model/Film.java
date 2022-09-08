@@ -5,6 +5,7 @@ import model.enums.Genre;
 
 import java.sql.Time;
 import java.util.Date;
+import java.util.Objects;
 
 public class Film {
     private int id;
@@ -96,6 +97,19 @@ public class Film {
 
     public void setAgeCategory(AgeCategory ageCategory) {
         this.ageCategory = ageCategory;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Film)) return false;
+        Film film = (Film) o;
+        return getId() == film.getId() && getRate() == film.getRate() && getDuration() == film.getDuration() && Objects.equals(getName(), film.getName()) && getGenre() == film.getGenre() && Objects.equals(getDirectorName(), film.getDirectorName()) && Objects.equals(getCreatedYear(), film.getCreatedYear()) && Objects.equals(getCountry(), film.getCountry()) && Objects.equals(getComment(), film.getComment()) && getAgeCategory() == film.getAgeCategory();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getGenre(), getDirectorName(), getCreatedYear(), getCountry(), getComment(), getRate(), getDuration(), getAgeCategory());
     }
 
     @Override
