@@ -19,15 +19,14 @@ public class UserRepository {
         connection.close();
         return true;
     }
-    public static boolean checkExistUser(String username, String password) throws SQLException {
+    public boolean checkExistUser(String username, String password) throws SQLException {
         Connection connection = ApplicationConstant.getConnection();
         String selectQuery = "SELECT user_name, pass_word FROM user WHERE user_name = ? AND pass_word = ?";
         PreparedStatement preparedStatement = ApplicationConstant.getConnection().prepareStatement(selectQuery);
         preparedStatement.setString(1, username);
         preparedStatement.setString(2, password);
         ResultSet resultSet = preparedStatement.executeQuery();
-        connection.close();
-        if (resultSet.first() == false)
+        if (resultSet.next() == false)
             return false;
         return true;
 
