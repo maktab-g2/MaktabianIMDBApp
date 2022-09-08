@@ -12,7 +12,7 @@ public class UserRepository {
         PreparedStatement prepareStatement = connection.prepareStatement(insertQuery);
         prepareStatement.setString(1, user.getUserName());
         prepareStatement.setString(2, user.getPassword());
-        prepareStatement.setInt(3,  user.getAge());
+        prepareStatement.setInt(3, user.getAge());
         prepareStatement.setString(4, user.getMobileNumber());
         prepareStatement.setString(5, user.getEmail());
         prepareStatement.executeUpdate();
