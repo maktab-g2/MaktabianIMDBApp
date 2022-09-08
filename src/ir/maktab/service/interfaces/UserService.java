@@ -1,4 +1,4 @@
-package ir.maktab.service;
+package ir.maktab.service.interfaces;
 
 public interface UserService {
     void addUser();
