@@ -23,7 +23,7 @@ public class FilmRepository {
         prepareStatement.setInt(6, film.getRate());
         prepareStatement.setInt(7, film.getDuration());
         prepareStatement.setString(8, String.valueOf(film.getAgeCategory()));
-        prepareStatement.setString(9 film.getCountry());
+        prepareStatement.setString(9, film.getCountry());
         prepareStatement.executeUpdate();
         connection.close();
         return true;
