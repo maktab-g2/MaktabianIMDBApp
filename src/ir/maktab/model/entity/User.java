@@ -1,6 +1,6 @@
-package model;
+package ir.maktab.model.entity;
 
-import model.enums.Genre;
+import ir.maktab.model.enums.Genre;
 
 import java.util.List;
 import java.util.Objects;

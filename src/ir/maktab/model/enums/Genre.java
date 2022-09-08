@@ -1,4 +1,4 @@
-package model.enums;
+package ir.maktab.model.enums;
 
 public enum Genre {
     ACTION,

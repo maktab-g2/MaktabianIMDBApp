@@ -1,4 +1,4 @@
-package model.enums;
+package ir.maktab.model.enums;
 
 public enum AgeCategory {
     G("General audiences – All ages admitted."),

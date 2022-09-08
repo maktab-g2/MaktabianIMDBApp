@@ -1,8 +1,8 @@
-package model;
+package ir.maktab.model.entity;
 
 import java.util.Objects;
 
-public class TvSeries extends Film{
+public class TvSeries extends Film {
     private int numberOfSeasons;
     private int numberOfEpisode;
 
