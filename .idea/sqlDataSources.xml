@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="32b68083-647d-4310-93fd-19fee869f04d" name="maktabianIMDB Mapping">
+      <data-sources db="d7ab2ba9-049b-45bb-8763-655516ea4077" />
+      <scope>
+        <node kind="database" negative="1">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>
