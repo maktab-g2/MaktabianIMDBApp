@@ -2,7 +2,7 @@ package ir.maktab.service;
 
 import ir.maktab.service.interfaces.UserService;
 
-public class UserServiceImplement implements UserService {
+public class UserServiceImpl implements UserService {
     @Override
     public void addUser() {
 

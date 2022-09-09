@@ -2,7 +2,7 @@ package ir.maktab.service;
 
 import ir.maktab.service.interfaces.FilmService;
 
-public class FilmServiceImplement implements FilmService {
+public class FilmServiceImpl implements FilmService {
     @Override
     public void addFilm() {
 

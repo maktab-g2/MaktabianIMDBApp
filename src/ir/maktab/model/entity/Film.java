@@ -14,9 +14,24 @@ public class Film {
     private Date createdYear;
     private String country;
     private Comment comment;
-    private int rate;
+    private float rate;
     private int duration;
     private AgeCategory ageCategory;
+
+    public Film() {
+    }
+
+    public Film(int id, String name, Genre genre, String directorName, Date createdYear, String country, float rate, int duration, AgeCategory ageCategory) {
+        this.id = id;
+        this.name = name;
+        this.genre = genre;
+        this.directorName = directorName;
+        this.createdYear = createdYear;
+        this.country = country;
+        this.rate = rate;
+        this.duration = duration;
+        this.ageCategory = ageCategory;
+    }
 
     public int getId() {
         return id;
@@ -74,11 +89,11 @@ public class Film {
         this.comment = comment;
     }
 
-    public int getRate() {
+    public float getRate() {
         return rate;
     }
 
-    public void setRate(int rate) {
+    public void setRate(Float rate) {
         this.rate = rate;
     }
 
