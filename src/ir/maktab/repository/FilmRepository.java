@@ -58,7 +58,7 @@ public class FilmRepository {
         preparedStatement.setString(2, directorName);
         ResultSet resultSet = preparedStatement.executeQuery();
         Film film;
-        while (resultSet.next()) {
+        if (resultSet.next()) {
             film = new Film(resultSet.getInt("id"),
                     resultSet.getString("name"),
                     Genre.valueOf(resultSet.getString("genre")),
@@ -69,21 +69,21 @@ public class FilmRepository {
                     resultSet.getInt("duration"),
                     AgeCategory.valueOf(resultSet.getString("age_category")));
             return film;
-
-
         }
         return null;
 
 
     }
 
-    public void updateRate(Film film) throws SQLException {
-
+    public boolean updateRate(Film film) throws SQLException {
         Connection connection = ApplicationConstant.getConnection();
-        String updateRateQuery = "Select AVG(rate) from user_film where ";
+        String updateRateQuery = "update film set rate = (Select AVG(rate) from user_film where film_id = ?) where id = ?";
         PreparedStatement prepareStatement = connection.prepareStatement(updateRateQuery);
-
-
+        prepareStatement.setInt(1, film.getId());
+        prepareStatement.setInt(2, film.getId());
+        int flag = prepareStatement.executeUpdate();
+        connection.close();
+        return flag > 0;
     }
 
 }
