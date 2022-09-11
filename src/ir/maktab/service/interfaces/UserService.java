@@ -1,9 +1,11 @@
 package ir.maktab.service.interfaces;
 
+import ir.maktab.model.entity.User;
+
 import java.sql.SQLException;
 
 public interface UserService {
-    void addUser(String userName, String password) throws SQLException;
+    void addUser(User user) throws SQLException;
 
     void findUser();
 
